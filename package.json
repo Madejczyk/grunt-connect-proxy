@@ -1,7 +1,7 @@
 {
-  "name": "madejczyk/grunt-connect-proxy",
+  "name": "grunt-connect-proxy",
   "description": "Provides a http proxy as middleware for grunt connect.",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "homepage": "https://github.com/drewzboto/grunt-connect-proxy",
   "author": {
     "name": "Jakub",
@@ -25,7 +25,7 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "lodash": "4.17.21"
+    "lodash.defaults": "4.2.0"
   },
   "devDependencies": {
     "grunt-contrib-nodeunit": "4.0.0",
