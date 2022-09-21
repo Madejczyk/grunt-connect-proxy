@@ -13,7 +13,6 @@ var _ = require('lodash');
 module.exports = function(grunt) {
   grunt.registerTask('configureProxies', 'Configure any specified connect proxies.', function(config) {
     // setup proxy
-    var httpProxy = require('http-proxy');
     var proxyOption;
     var proxyOptions = [];
     var validateProxyConfig = function(proxyOption) {
