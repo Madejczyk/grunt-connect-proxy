@@ -8,7 +8,7 @@
 
 'use strict';
 var utils = require('../lib/utils');
-var _ = require('lodash');
+var defaults = require('lodash.defaults');
 
 module.exports = function(grunt) {
   grunt.registerTask('configureProxies', 'Configure any specified connect proxies.', function(config) {
@@ -16,7 +16,7 @@ module.exports = function(grunt) {
     var proxyOption;
     var proxyOptions = [];
     var validateProxyConfig = function(proxyOption) {
-        if (_.isUndefined(proxyOption.host) || _.isUndefined(proxyOption.context)) {
+        if (proxyOption.host === undefined || proxyOption.context === undefined) {
             grunt.log.error('Proxy missing host or context configuration');
             return false;
         }
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
         proxyOptions = proxyOptions.concat(grunt.config('connect.proxies') || []);
     }
     proxyOptions.forEach(function(proxy) {
-        proxyOption = _.defaults(proxy,  {
+        proxyOption = defaults(proxy,  {
             port: proxy.https ? 443 : 80,
             https: false,
             secure: true,
